@@ -12,10 +12,13 @@ spec:
     metadata:
       labels:
         app: dubbo-samples-xds-consumer
+      annotations:
+        inject.istio.io/templates: grpc-agent
+        proxy.istio.io/config: '{"holdApplicationUntilProxyStarts": true}'
     spec:
       containers:
         - name: server
-          image: dubboteam/dubbo-samples-xds-consumer:1.0.0
+          image: dockeddocking/dubbo:consumer.agent.v1.12
           livenessProbe:
             httpGet:
               path: /live
