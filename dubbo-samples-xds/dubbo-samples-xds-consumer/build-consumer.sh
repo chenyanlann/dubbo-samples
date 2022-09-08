@@ -10,8 +10,8 @@
 
 #cp ../../dubbo-demo-provider/target/dubbo-demo-provider.jar .
 echo '-------build image-----------'
-docker build -f Dockerfile -t dockeddocking/dubbo:consumer.agent.v1.12  .
-docker push dockeddocking/dubbo:consumer.agent.v1.12
+docker build -f Dockerfile -t dockeddocking/dubbo:consumer.agent.v1.17  .
+docker push dockeddocking/dubbo:consumer.agent.v1.17
 echo '-------push image success-----------'
 
 docker rmi -f $(docker images|grep none |awk '{print $3}')

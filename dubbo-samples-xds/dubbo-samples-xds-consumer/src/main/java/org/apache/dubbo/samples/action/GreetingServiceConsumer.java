@@ -27,7 +27,7 @@ import org.springframework.stereotype.Component;
 @Component("annotatedConsumer")
 public class GreetingServiceConsumer {
 
-    @DubboReference(version = "1.0.0", providedBy = "dubbo-samples-xds-provider")
+    @DubboReference(version = "1.0.0", providedBy = "dubbo-samples-xds-provider", lazy = true)
     private GreetingService greetingService;
 
     public String doSayHello(String name) {
